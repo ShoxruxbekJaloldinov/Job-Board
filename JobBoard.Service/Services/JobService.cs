@@ -71,7 +71,7 @@ namespace JobBoard.Service.Services
             {
                 var dto = new JobForResultDto()
                 {
-                    Id = _id,
+                    Id = job.Id,
                     JobTitle = job.JobTitle,
                     Description = job.Description,
                     Phone = job.Phone,
@@ -94,9 +94,11 @@ namespace JobBoard.Service.Services
 
             var result = new JobForResultDto()
             {
-                Id = _id,
+                Id = job.Id,
                 JobTitle = job.JobTitle,
                 Description = job.Description,
+                Conditions = job.Conditions,
+                CompanyName = job.CompanyName,
                 Phone = job.Phone,
                 Price = job.Price,
             };
@@ -116,6 +118,7 @@ namespace JobBoard.Service.Services
                 JobTitle = dto.JobTitle,
                 Description = dto.Description,
                 Phone = dto.Phone,
+                Conditions = dto.Conditions,
                 Price = dto.Price,
                 UpdatedAt = DateTime.UtcNow
             };
